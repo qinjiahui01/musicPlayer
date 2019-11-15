@@ -1,0 +1,2 @@
+<!--pages/singer-detail/singer-detail.wxml-->
+<music-list title="{{title}}" songlist="{{songlist}}" image="{{image}}" total="{{total}}" bind:myevent="childEvent" />

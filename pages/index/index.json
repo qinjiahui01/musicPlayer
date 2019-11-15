@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-slider":"/components/slider/slider"
+  },
+  "navigationBarTitleText": "推荐"
+}

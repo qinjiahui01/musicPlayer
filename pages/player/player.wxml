@@ -1,0 +1,65 @@
+<view class="player">
+  <view class="normal-player">
+    <!--歌曲信息  -->
+    <view class="song-info">
+      <view class="title">{{currentSong.name || "暂无播放音乐"}}</view>
+      <view class="singer">{{currentSong.singer}}</view>
+    </view>
+    <!-- 中间 -->
+    <view class="middle">
+      <view class="cd-wrapper">
+        <view class="cd {{cdCls}}">
+          <image class="image" src="{{currentSong.image}}" />
+        </view>
+      </view>
+    </view>
+    <!-- 小圆点 -->
+    <!-- <view class="dots-wrapper">
+      <view class="dots {{currentDot==index?'current':''}}" wx:for="{{dotsArray}}" wx:key="index">
+      </view>
+    </view> -->
+    <view class="bottom">
+      <!--进度条  -->
+      <view class="progress-wrapper">
+        <text class="time time-l">{{currentTime}}</text>
+        <view class="progress-bar-wrapper">
+          <my-progress percent="{{percent}}" />
+        </view>
+        <text class="time time-r">{{duration}}</text>
+      </view>
+      <!-- 底部按钮 -->
+      <view class="operators">
+        <view class="icon i-left">
+          <i bind:tap="changeMod" class="{{playMod==1? 'icon-sequence':''}}{{playMod==2? ' icon-random':''}}{{playMod==3?' icon-loop':''}}"></i>
+        </view>
+        <view class="icon i-left">
+          <i class="icon-prev" bind:tap="prev"></i>
+        </view>
+        <view class="icon i-center">
+          <i class="{{playIcon}}" bind:tap="togglePlaying"></i>
+        </view>
+        <view class="icon i-right">
+          <i class="icon-next" bind:tap="next"></i>
+        </view>
+        <view class="icon i-right" bind:tap="openList">
+          <i class="icon-playlist"></i>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="content-wrapper {{translateCls}}">
+    <view class="close-list" bindtap="close"></view>
+    <view class="play-content">
+      <view class="plyer-list-title">播放队列({{songlist.length}}首)</view>
+      <scroll-view class="playlist-wrapper" scroll-y scroll-into-view="list{{currentIndex}}">
+        <view class="item {{index==currentIndex ? 'playing':''}}" wx:for="{{songlist}}" id="list{{index}}" data-index="{{index}}" bindtap="playthis" wx:key="{{index}}">
+          <view class="name">{{item.name}}</view>
+          <view class="play-list-line">-</view>
+          <view class="singer">{{item.singer}}</view>
+        </view>
+      </scroll-view>
+      <view class="close-playlist" bindtap="close">关闭</view>
+    </view>
+  </view>
+</view>

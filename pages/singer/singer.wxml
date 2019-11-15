@@ -1,0 +1,4 @@
+<!--pages/singer/singer.wxml-->
+<view class="singer">
+  <list-view singerList="{{singerList}}" class="listview"></list-view>
+</view>

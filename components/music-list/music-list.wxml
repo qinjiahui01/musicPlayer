@@ -1,0 +1,14 @@
+<!--components/music-list/music-list.wxml-->
+<scroll-view class="music-list" scroll-y bind:scrolltolower="getMoreSongs">
+  <view class="bg-image" style="background-image:url('{{album}}')" wx:if="{{album}}">
+    <view class="mask"></view>
+    <button plain hover-class="none" bind:tap="randomPlayAll">随机播放全部</button>
+  </view>
+
+  <view class="song-list">
+    <view bind:tap="selectItem" data-index="{{index}}" class="song-list-item" wx:for="{{songlist}}" wx:key="index">
+      <text class="song-name">{{item.name}}</text>
+      <text class="singer">{{item.singer}}·{{item.album}}</text>
+    </view>
+  </view>
+</scroll-view>

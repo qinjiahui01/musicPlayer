@@ -1,0 +1,5 @@
+/* pages/top-list/top-list.wxss */
+.top-list{
+  width: 100%;
+  height: 100%;
+}

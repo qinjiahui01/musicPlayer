@@ -1,0 +1,4 @@
+<!--pages/top-list/top-list.wxml-->
+<view class="top-list">
+  <music-list title="{{title}}" image="{{album}}" songlist="{{songlist}}"/>
+</view>

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/player/player",
+    "pages/top-list/top-list",
+    "pages/singer/singer",
+    "pages/singer-detail/singer-detail",
+    "pages/search/search"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#31c27c",
+    "color": "#999",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "/assets/images/index.png",
+        "selectedIconPath": "/assets/images/index_active.png"
+      },
+      {
+        "pagePath": "pages/player/player",
+        "text": "正在播放",
+        "iconPath": "/assets/images/player.png",
+        "selectedIconPath": "/assets/images/player_active.png"
+      },
+      {
+        "pagePath": "pages/singer/singer",
+        "text": "音乐馆",
+        "iconPath": "/assets/images/singer.png",
+        "selectedIconPath": "/assets/images/singer_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

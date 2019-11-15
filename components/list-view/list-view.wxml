@@ -1,0 +1,35 @@
+<!--pages/singer-list/singer-list.wxml-->
+<view class="container">
+  <scroll-view class="singer-list-wrapper"
+               scroll-y
+               bind:scroll="scroll"
+               scroll-into-view="view{{toView}}">
+    <view class="singer-list-group" 
+          wx:for="{{singerList}}" 
+          wx:key="index"
+          id="view{{index}}">
+      <view class="list-group-title">{{item.title}}</view>
+      <view class="list-group-content" 
+            wx:for="{{item.items}}" 
+            wx:key="index">
+        <view class="list-group-item" 
+              data-singer="{{item}}" 
+              bind:tap="toSingerDetail">
+          <image class="avater" src="{{item.avatar}}"></image>
+          <text class="singer-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  
+   <view class="list-shortcut" touchstart="onShortcutTouchStart"
+        touchmove="onShortcutTouchMove">
+    <view>
+      <view class="item {{currentIndex==index?'current':''}}" wx:for="{{shortcutList}}" wx:key="{{index}}"
+            data-index="{{index}}"
+            bind:tap="shortcutListTap">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,76 @@
+/* pages/index/index.wxss */
+.container{
+  width: 100%;
+}
+/* 搜索栏 */
+.search-wrapper {
+  padding: 10rpx 30rpx;
+  position: relative;
+}
+.search-wrapper .search{
+  height: 60rpx;
+  border:1px solid #999;
+  border-radius: 10rpx;
+  text-align: center; 
+  font-size: 24rpx;
+}
+.search-wrapper icon{
+  position: absolute;
+  right: 50rpx;
+  top:30rpx;
+}
+
+/* 轮播图 */
+/* 歌单表单公共样式 */
+.hot-list .hot-rank .item,
+.recommend-list .recommend-rank .item{
+  display: flex;
+  padding-top:40rpx;
+  margin: 0 40rpx;
+}
+.hot-list .title,
+.recommend-list .title{
+  height: 130rpx;
+  line-height: 130rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.hot-list .hot-rank .item .song-list,
+.recommend-list .recommend-rank .item .song-list{
+ flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  justify-content: center;
+}
+.hot-list .hot-rank .item .song-list .song-list-item,
+.recommend-list .recommend-rank .item .song-list .song-list-item{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* 榜单推荐 */
+.hot-list .hot-rank .item .icon{
+  width:240rpx;
+  height: 240rpx;
+}
+.hot-list .hot-rank .icon .image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.hot-list .hot-rank .item .song-list{
+  width: 200rpx;
+  
+}
+
+/* 热门歌单 */
+.recommend-list .recommend-rank .item .icon{
+  width: 120rpx;
+}
+.recommend-list .recommend-rank .item .song-list .song-list-item .song-desc{
+  display: block;
+  color:rgba(0, 0, 0, .5);
+}

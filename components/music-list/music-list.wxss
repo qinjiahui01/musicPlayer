@@ -1,0 +1,57 @@
+/* components/music-list/music-list.wxss */
+.music-list {
+    width: 100%;
+    height: 603px;
+}
+.bg-image{
+  width:100%;
+  padding-top: 80%;
+  position: relative;
+  background-size:cover;
+}
+.bg-image .mask{
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.3);
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.bg-image button{
+  width:270rpx;
+  font-size: 24rpx;
+  color:#31c27c;
+  border-radius: 24rpx;
+  border: 1px solid #31c27c;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 80rpx;
+}
+
+/* 歌曲列表 */
+.song-list{
+  padding:0 40rpx;
+  overflow: hidden;
+}
+.song-list .song-list-item{
+  margin-top:40rpx;
+  line-height: 40rpx;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+.song-list .song-list-item .singer{
+  display: block;
+  font-size: 24rpx;
+  color: rgba(0,0,0,0.8)
+}
+
+.loading-container {
+    position: fixed;
+    width: 100%;
+    top: 25%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

@@ -1,0 +1,49 @@
+<!--pages/index/index.wxml-->
+<scroll-view class="container" scroll-y>
+  <!-- 搜索栏 -->
+  <view class="search-wrapper" catch:tap="toSearch">
+    <input class="search" placeholder="输入歌手名、歌曲名搜索" disabled/>
+    <icon type="search" size="15"></icon>
+  </view>
+  <!-- 轮播图 -->
+  <view class="slider-wrapper">
+    <my-slider slider="{{slider}}" />
+  </view>
+  <view class="hot-list" vx:if="{{topList.length > 0}}">
+    <view class="title">热门榜单推荐</view>
+    <view class="hot-rank">
+      <block wx:for="{{topList}}" wx:key="{{index}}">
+        <view class="item" bind:tap="handleClick" data-topid="{{item.id}}">
+          <view class="icon">
+            <image lazy-load src="{{item.picUrl}}" mode="widthFix" />
+          </view>
+          <view class="song-list">
+            <view class="song-list-item" wx:for="{{item.songList}}" wx:key="index">
+              <text>{{index+1}}.</text>
+              <text>{{item.songname}}-{{item.singername}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="recommend-list" vx:if="{{songList.length > 0}}">
+    <view class="title">热门歌单推荐</view>
+    <view class="recommend-rank">
+       <block wx:for="{{songList}}" wx:key="{{index}}">
+        <view class="item">
+          <view class="icon">
+            <image lazy-load src="{{item.picUrl}}" mode="widthFix" />
+          </view>
+          <view class="song-list">
+            <view class="song-list-item">
+              <text class="song-author">{{item.songListAuthor}}</text>
+              <text class="song-desc">{{item.songListDesc}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</scroll-view>
